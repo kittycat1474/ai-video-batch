@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+*.ledger.json
+*.ledger.json.tmp
+plan.json
+plans/
+outputs/
+node_modules/
+*.mp4
+*.mov
+*.wav
+*.mp3

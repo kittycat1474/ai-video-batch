@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 视频批量制作"
+  short_description: "先确认剧情摘要，再用角色与声音参考批量生成视频，自动排开供人工审核。"
+  default_prompt: "使用 $ai-video-batch，为指定 AI 账号先提出剧情摘要，待我确认后再批量生成并排版供审核。"
