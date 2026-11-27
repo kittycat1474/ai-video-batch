@@ -9,6 +9,11 @@ Create per-account plans after the user approves summaries. Keep them small, loc
   "orcaExecutable": "orca.exe",
   "accountId": "user-chosen-account",
   "profileRevision": "confirmed-account-profile-revision",
+  "requiresNativeMentions": true,
+  "requiredReferences": [
+    { "nodeId": "character-asset-node-id", "label": "Exact character reference label", "type": "image", "role": "main character design" },
+    { "nodeId": "voice-asset-node-id", "label": "Exact voice reference label", "type": "audio", "role": "main character Nya voice" }
+  ],
   "approvedIds": ["story-01"],
   "tasks": [
     {
@@ -26,6 +31,8 @@ Create per-account plans after the user approves summaries. Keep them small, loc
 Keep a separate confirmed account profile, or include it in the plan: visual medium, story genre, target audience, tone, character dynamics, content boundaries, setting rules, sound rules, asset IDs/order and generation settings. Complete the first-account Q&A before creating ideas. Visual medium and genre are different fields. Reference the confirmed profile by `profileRevision` so account workers use the same creative direction. Model, ratio, resolution, duration and review slots must be applied and verified by the platform adapter; the bridge does not silently apply them. A new account must not inherit another account's defaults.
 
 Resolve `orcaExecutable` from the installed Orca skill, then use a bare executable or absolute executable path, not a shell command containing arguments. `approvedIds` and `approvedSummary` are written only after user approval. Changed summaries must be reapproved. Record `nodeId` as soon as its UI copy is created, before submission.
+
+For Nadou set `requiresNativeMentions: true`. List **all required assets**, including each character image and voice plus any scene/prop/video/audio reference the task uses. The two entries above only illustrate the shape, not a fixed asset count. Task-specific `requiredReferences` may override the account list. Before submitting, the adapter must verify every real @tag, corresponding node identity/connection and character/voice role; a missing or wrong reference blocks generation. Preserve the structured header when filling story text, or reinsert tags via the picker after a whole-editor fill.
 
 From the skill directory:
 
